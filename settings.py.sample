@@ -3,6 +3,5 @@ url = 'http://localhost/playsms/index.php'
 app = 'ws'
 username = 'admin'
 webservices_token = '4117d4411aa752be52d7d111176cf585c'
-smsc = 'mysmsc'
 recvnum = 007
 

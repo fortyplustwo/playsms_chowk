@@ -22,6 +22,7 @@ def receivesms():
         msg = {}
         msg['from'] = request.args['from']
         msg['text'] = request.args['text']
+        msg['smsc'] = request.args['backend']
         msg['args'] = request.args
         
         send_to_playsms(msg)

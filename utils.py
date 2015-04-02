@@ -20,7 +20,7 @@ def send_to_playsms(msg = {}):
                 'from'      : msg['from'],
                 'msg'       : msg['text'],
                 'recvnum'   : recvnum,
-                'smsc'      : smsc,
+                'smsc'      : msg['smsc'],
                 'u'         : username,
                 'h'         : webservices_token,
                 'op'        : 'inject',
