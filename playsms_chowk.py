@@ -1,5 +1,5 @@
 from flask import Flask, request
-from utils import send_to_playsms 
+from utils import send_to_playsms, make_text_playsms_compatible
 app = Flask(__name__)
 
 import logging
@@ -21,7 +21,7 @@ def receivesms():
     try:
         msg = {}
         msg['from'] = request.args['from']
-        msg['text'] = request.args['text']
+        msg['text'] = make_text_playsms_compatible(request.args['text'])
         msg['smsc'] = request.args['backend']
         msg['args'] = request.args
         

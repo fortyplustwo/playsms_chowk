@@ -4,6 +4,16 @@ import logging
 #configure our logger
 logger = logging.getLogger(__name__) #thus, utils.logger 
 
+def make_text_playsms_compatible(t):
+    '''Makes the msg text such that is compatible for processing inside playsms'''
+
+    #TODO: Ensure that this happens only in case of msgs with keyword and nothing else
+    #if the text doesnt' start with an @, add it.
+    if not t[0] == '@':
+        t = '@' + t
+
+    return t
+
 def send_to_playsms(msg = {}):
     '''sends a given message to the RapidPro server
     Parameters  Name or description
